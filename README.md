@@ -49,6 +49,9 @@ Deploy to the main website:
 ### 本地运行
 
 ```powershell
+# 0) 安装 Node.js
+winget install OpenJS.NodeJS.LTS --source winget
+
 # 1) 先确认有编译产物
 python execute.py -m lecture_01  # 生成 var/traces/lecture_01.json
 
