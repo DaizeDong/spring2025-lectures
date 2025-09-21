@@ -11,9 +11,10 @@ wandb
 einops
 jaxtyping
 readable-number
-triton
-kenlm
-fasttext
+#triton
+#kenlm
+#fasttext
+fasttext-wheel
 mmh3
 bitarray
 matplotlib

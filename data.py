@@ -47,8 +47,10 @@ def preprocess(documents: list[Document]) -> list[Document]:
     return [Document(url=document.url, content=markdownify(document.content)) for document in documents]
 
 
-def write_documents(documents: Iterable[Document], path: str):
-    with open(path, "w") as out:
+def write_documents(documents: Iterable[Document], path: str, encoding: str = "utf-8", errors: str = "replace"):
+    import os
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding=encoding, errors=errors, newline="") as out:
         for i, document in enumerate(documents):
             print(f"--- PAGE {i}: url = {document.url}", file=out)
             print(document.content, file=out)
